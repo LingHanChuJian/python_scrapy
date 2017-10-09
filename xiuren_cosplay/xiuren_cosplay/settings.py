@@ -68,10 +68,12 @@ ROBOTSTXT_OBEY = False
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
 #    'xiuren_cosplay.pipelines.XiurenCosplayPipeline': 300,
+   'xiuren_cosplay.pipelines.CosplayPipelineJsonItemExporter':2,
    'xiuren_cosplay.pipelines.CosplayPipeline': 1,
+#    'xiuren_cosplay.pipelines.MysqlPipline':3,
+   'xiuren_cosplay.pipelines.MysqlTwistedPipline':3,
 #    'scrapy.pipelines.images.ImagesPipeline': 1,
 }
-
 
 
 # 指定管道图片字段
@@ -84,6 +86,15 @@ IMAGES_EXPIRES = 30
 # 图片存放路径
 dir_name = os.path.join(os.path.abspath(os.path.dirname(__file__)),"cosplayImg")
 IMAGES_STORE = dir_name
+
+
+#Mysql数据库的配置信息
+MYSQL_HOST = '192.168.43.165'
+MYSQL_DBNAME = 'cosplay'         #数据库名字，请修改
+MYSQL_USER = 'root'             #数据库账号，请修改 
+MYSQL_PASSWD = 'root'         #数据库密码，请修改
+MYSQL_PORT = 3306               #数据库端口，在dbhelper中使用
+
 
 
 # Enable and configure the AutoThrottle extension (disabled by default)

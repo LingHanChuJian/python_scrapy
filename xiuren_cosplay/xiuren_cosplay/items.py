@@ -12,5 +12,7 @@ class XiurenCosplayItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     imgUrls = scrapy.Field()
+    imgName_id = scrapy.Field()
     imgName = scrapy.Field()
+    imgPath = scrapy.Field()
     pass
